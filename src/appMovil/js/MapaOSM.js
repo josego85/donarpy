@@ -1,6 +1,6 @@
 // Variables y Objetos globales.
 var v_mapa = null;
-var v_cluster_marcadores = null;
+//var v_cluster_marcadores = null;
 
 function cargarMapa(){
 	// Asuncion - Paraguay.
@@ -82,10 +82,10 @@ function cargarMapa(){
 //		onEachFeature: onEachFeature
 //	});
 	
-	// Cluster de marcadores.
-	v_cluster_marcadores = L.markerClusterGroup();					// Se crea un cluster group.
-	v_cluster_marcadores.addLayer(v_geojsonLayer); 					// Agrega el Layer GEOJSON al cluster group.
-	v_mapa.addLayer(v_cluster_marcadores);							// Agrega el cluster group al mapa.
+//	// Cluster de marcadores.
+//	v_cluster_marcadores = L.markerClusterGroup();					// Se crea un cluster group.
+//	v_cluster_marcadores.addLayer(v_geojsonLayer); 					// Agrega el Layer GEOJSON al cluster group.
+//	v_mapa.addLayer(v_cluster_marcadores);							// Agrega el cluster group al mapa.
 
 	function onEachFeature(p_feature, p_layer) {
 		if (p_feature.properties) {
