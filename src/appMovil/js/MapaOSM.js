@@ -15,71 +15,71 @@ function cargarMapa(){
 		attribution: 'Data \u00a9 <a href="http://www.openstreetmap.org/copyright"> OpenStreetMap Contributors </a> Tiles \u00a9 HOT'
 	}).addTo(v_mapa);
 
-//	// Link de donde se sacan los puntos.
-//	// Devuelve una estructura json.
-//	var v_geo_json_url = "http://eventos.proyectosbeta.net/mapas/listarEventos_jsonp";
-//	var v_geojsonLayer = new L.GeoJSON();
-//
-//    function getJson(p_data) {
-//    	console.log("p_data: ", p_data);
-//        v_geojsonLayer = L.geoJson((p_data), {
-//            onEachFeature: onEachFeature
-//        }).addTo(v_mapa);
-//    }
-//
-//    $.ajax({
-//        url: v_geo_json_url,
-//        dataType: 'jsonp',
-//        jsonpCallback: 'getJson',
-//        success: getJson
-//    });
+	// Link de donde se sacan los puntos.
+	// Devuelve una estructura json.
+	var v_geo_json_url = "http://donarpy.proyectosbeta.net/donaciones/listarDonaciones_jsonp";
+	var v_geojsonLayer = new L.GeoJSON();
+
+    function getJson(p_data) {
+    	console.log("p_data: ", p_data);
+        v_geojsonLayer = L.geoJson((p_data), {
+            onEachFeature: onEachFeature
+        }).addTo(v_mapa);
+    }
+
+    $.ajax({
+        url: v_geo_json_url,
+        dataType: 'jsonp',
+        jsonpCallback: 'getJson',
+        success: getJson
+    });
     
 
-	var v_geojsonFeature = {
-	   	"type" : "FeatureCollection",
-	    "features" : [ {
-		    "type" : "Feature",
-		    "geometry" : {
-			    "type" : "Point",
-			    "coordinates" : [ "-57.6309129", "-25.2961407" ]
-		    },
-		    "properties" : {
-			    "descripcion" : "Tres camas, un televisor, una heladera."
-		    }
-	    },{
-		    "type" : "Feature",
-		    "geometry" : {
-			    "type" : "Point",
-			    "coordinates" : [ "-57.6309129", "-25.2961407" ]
-		    },
-		    "properties" : {
-			    "descripcion" : "Un Snes"
-		    }
-	    },{
-		    "type" : "Feature",
-		    "geometry" : {
-			    "type" : "Point",
-			    "coordinates" : [ "-57.561691", "-25.278030" ]
-		    },
-		    "properties" : {
-			    "descripcion" : "Una PC"
-		    }
-	    },{
-		    "type" : "Feature",
-		    "geometry" : {
-			    "type" : "Point",
-			    "coordinates" : [ "-57.521160", "-25.335239" ]
-		    },
-		    "properties" : {
-			    "descripcion" : "Una heladera"
-		    }
-	    }]
-	};
-	
-	// Layer GeoJSON.
-	var v_geojsonLayer = L.geoJson(v_geojsonFeature, {
-		onEachFeature: onEachFeature
-	});
+//	var v_geojsonFeature = {
+//	   	"type" : "FeatureCollection",
+//	    "features" : [ {
+//		    "type" : "Feature",
+//		    "geometry" : {
+//			    "type" : "Point",
+//			    "coordinates" : [ "-57.6309129", "-25.2961407" ]
+//		    },
+//		    "properties" : {
+//			    "descripcion" : "Tres camas, un televisor, una heladera."
+//		    }
+//	    },{
+//		    "type" : "Feature",
+//		    "geometry" : {
+//			    "type" : "Point",
+//			    "coordinates" : [ "-57.6309129", "-25.2961407" ]
+//		    },
+//		    "properties" : {
+//			    "descripcion" : "Un Snes"
+//		    }
+//	    },{
+//		    "type" : "Feature",
+//		    "geometry" : {
+//			    "type" : "Point",
+//			    "coordinates" : [ "-57.561691", "-25.278030" ]
+//		    },
+//		    "properties" : {
+//			    "descripcion" : "Una PC"
+//		    }
+//	    },{
+//		    "type" : "Feature",
+//		    "geometry" : {
+//			    "type" : "Point",
+//			    "coordinates" : [ "-57.521160", "-25.335239" ]
+//		    },
+//		    "properties" : {
+//			    "descripcion" : "Una heladera"
+//		    }
+//	    }]
+//	};
+//	
+//	// Layer GeoJSON.
+//	var v_geojsonLayer = L.geoJson(v_geojsonFeature, {
+//		onEachFeature: onEachFeature
+//	});
 	
 	// Cluster de marcadores.
 	v_cluster_marcadores = L.markerClusterGroup();					// Se crea un cluster group.
