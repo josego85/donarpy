@@ -3,4 +3,4 @@ donarpy (Versión Alfa)
 
 Una herramienta para donar tus pertenencias a una orgnización específica.
 
-Es una plataforma que funciona vía web (<a href = "http://donarpy.proyectosbeta.net/index.html" target = "_blank">Donarpy</a>) como también con Firefox OS.
+Es una plataforma que funciona con Firefox OS.
