@@ -22,7 +22,6 @@ function cargarMapa(){
 	var v_geojsonLayer = new L.GeoJSON();
 
     function getJson(p_data) {
-    	console.log("p_data: ", p_data);
         v_geojsonLayer = L.geoJson((p_data), {
             onEachFeature: onEachFeature
         }).addTo(v_mapa);

@@ -77,7 +77,7 @@ class donaciones extends CI_Controller {
 		$p_donacion_longitud = $this->input->post('donacion_longitud', true);
 		
 		$v_datos = array(
-			'donacion_nombre' => $p_donacion_desc,
+			'donacion_desc' => $p_donacion_desc,
 			'donacion_latitud' => $p_donacion_latitud,
 			'donacion_longitud' => $p_donacion_longitud,
 		);
