@@ -1,5 +1,6 @@
 // Variables y Objetos globales.
 var v_mapa = null;
+var v_cluster_marcadores = null;
 
 function cargarMapa(){
 	// Asuncion - Paraguay.
@@ -90,8 +91,12 @@ function cargarMapa(){
 		if (p_feature.properties) {
             var v_popupString = '<div class="popup">';
             
-            for (var k in p_feature.properties) {
+            for(var k in p_feature.properties) {
                 var v = p_feature.properties[k];
+                
+                if(k == 'descripcion'){
+                	k = 'Descripci&oacute;n';
+                }
                 v_popupString += '<b>' + k + '</b>: ' + v + '<br />';
             }
             v_popupString += '</div>';
